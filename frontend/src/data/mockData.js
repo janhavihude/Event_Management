@@ -1,6 +1,4 @@
-// High-quality Unsplash images for events
-const img = (id, w = 800) =>
-  `https://images.unsplash.com/photo-${id}?w=${w}&h=${w * 0.6}&fit=crop&q=80`;
+import { eventImages, categoryImage, organizerLogo } from './eventImages.js';
 
 export const categories = [
   {
@@ -9,7 +7,7 @@ export const categories = [
     slug: 'music',
     icon: '🎵',
     description: 'Concerts, festivals, and live performances',
-    image: img('1459749411175-04bf52929827'),
+    image: '',
     eventCount: 4,
     isActive: true,
   },
@@ -19,7 +17,7 @@ export const categories = [
     slug: 'technology',
     icon: '💻',
     description: 'Tech conferences, hackathons, and workshops',
-    image: img('1540575467063-178a50c2df87'),
+    image: '',
     eventCount: 4,
     isActive: true,
   },
@@ -29,7 +27,7 @@ export const categories = [
     slug: 'sports',
     icon: '⚽',
     description: 'Sporting events and tournaments',
-    image: img('1461896836934- voices'), // fix below
+    image: '',
     eventCount: 3,
     isActive: true,
   },
@@ -39,7 +37,7 @@ export const categories = [
     slug: 'arts-culture',
     icon: '🎨',
     description: 'Art exhibitions, theater, and cultural events',
-    image: img('1460661419841-fd4b5c792e68'),
+    image: '',
     eventCount: 3,
     isActive: true,
   },
@@ -49,7 +47,7 @@ export const categories = [
     slug: 'business',
     icon: '💼',
     description: 'Networking events, seminars, and trade shows',
-    image: img('1556761175-b413da4baf72'),
+    image: '',
     eventCount: 3,
     isActive: true,
   },
@@ -59,7 +57,7 @@ export const categories = [
     slug: 'food-drink',
     icon: '🍽️',
     description: 'Food festivals, wine tastings, and culinary events',
-    image: img('1414235077428-338989a2e8c0'),
+    image: '',
     eventCount: 3,
     isActive: true,
   },
@@ -69,7 +67,7 @@ export const categories = [
     slug: 'education',
     icon: '📚',
     description: 'Workshops, courses, and educational seminars',
-    image: img('1524178232363-1f8729a0c5b4'),
+    image: '',
     eventCount: 3,
     isActive: true,
   },
@@ -79,14 +77,11 @@ export const categories = [
     slug: 'health-wellness',
     icon: '🧘',
     description: 'Yoga retreats, fitness events, and wellness workshops',
-    image: img('1544367567-0f2fcb009e0b'),
+    image: '',
     eventCount: 3,
     isActive: true,
   },
 ];
-
-// Fix sports category image
-categories[2].image = img('1461896836934-ffe607ba8121');
 
 const futureDate = (days, hour = 18) => {
   const d = new Date();
@@ -110,7 +105,7 @@ export const organizers = [
     user: 'user_organizer',
     organizationName: 'EventPro India',
     description: 'Leading event management company in India',
-    logo: img('1501281668745-f7f57925c3b4', 200),
+    logo: '',
     isVerified: true,
     isApproved: true,
     totalEvents: 12,
@@ -122,7 +117,7 @@ export const organizers = [
     user: 'user_org2',
     organizationName: 'Mumbai Live Events',
     description: 'Premium live entertainment and concerts',
-    logo: img('1470229722913-7c0e2dbbafd3', 200),
+    logo: '',
     isVerified: true,
     isApproved: true,
     totalEvents: 8,
@@ -202,7 +197,6 @@ export const events = [
     _id: 'evt_1',
     title: 'Mumbai Music Festival 2026',
     description: 'Experience the biggest music festival in Mumbai featuring top Indian and international artists. Three days of non-stop music across 4 stages, gourmet food courts, and immersive art installations. Headliners include AR Rahman tribute night, indie rock showcases, and EDM after-parties.',
-    images: [img('1459749411175-04bf52929827'), img('1470229722913-7c0e2dbbafd3'), img('1506157786351-b828c9d0a0e0')],
     category: 'cat_music',
     organizer: 'org_1',
     date: futureDate(30, 17),
@@ -224,7 +218,6 @@ export const events = [
     _id: 'evt_2',
     title: 'Bollywood Night Live',
     description: 'An enchanting evening of Bollywood classics and contemporary hits performed live by a 50-piece orchestra. Dress in your finest and dance under the stars at the iconic Jio World Garden.',
-    images: [img('1514525253161-7a46d19cd819'), img('1493225457124-a3eb161ffa5f')],
     category: 'cat_music',
     organizer: 'org_2',
     date: futureDate(18, 19),
@@ -245,7 +238,6 @@ export const events = [
     _id: 'evt_3',
     title: 'Indie Waves Pune',
     description: 'Discover the best independent artists from across India. Intimate venue, craft beer, and vinyl pop-up shop. Featuring Prateek Kuhad, When Chai Met Toast, and 8 rising stars.',
-    images: [img('1501386761578-0c37b1cc0fe3'), img('1511671788679-f06346f9bfc3')],
     category: 'cat_music',
     organizer: 'org_2',
     date: futureDate(25, 20),
@@ -265,7 +257,6 @@ export const events = [
     _id: 'evt_4',
     title: 'Classical Raga Evening',
     description: 'An evening of Hindustani classical music featuring renowned tabla maestro and sitar virtuoso. Traditional ambiance at NCPA Tata Theatre.',
-    images: [img('1514320291840-755e42c604d0'), img('1510915361894-db8b1a1f2d1a')],
     category: 'cat_music',
     organizer: 'org_1',
     date: futureDate(40, 18),
@@ -287,7 +278,6 @@ export const events = [
     _id: 'evt_5',
     title: 'Tech Summit India 2026',
     description: 'Join 5000+ developers, entrepreneurs, and tech leaders for India\'s premier technology conference. Keynotes from Google, Microsoft, and Flipkart executives. 40+ workshops on AI, cloud, and Web3.',
-    images: [img('1540575467063-178a50c2df87'), img('1504384308090-c894fdcc538d'), img('1531482615713-2afd69097998')],
     category: 'cat_technology',
     organizer: 'org_1',
     date: futureDate(45, 9),
@@ -309,7 +299,6 @@ export const events = [
     _id: 'evt_6',
     title: 'AI & Machine Learning Workshop',
     description: 'Hands-on full-day workshop covering LLMs, computer vision, and MLOps. Build and deploy a real AI model. Includes lunch, certificate, and GitHub repo access.',
-    images: [img('1677442136019-21780ecad995'), img('1620712943543-bcc4688e7485')],
     category: 'cat_technology',
     organizer: 'org_1',
     date: futureDate(12, 10),
@@ -329,7 +318,6 @@ export const events = [
     _id: 'evt_7',
     title: 'Startup Hackathon 48H',
     description: 'Build the next unicorn in 48 hours! ₹10 lakh prize pool, mentorship from YC alumni, and investor pitch session. Teams of 2-4. Free meals and swag included.',
-    images: [img('1504384308090-c894fdcc538d'), img('1517245386807-bb43f82c33c4')],
     category: 'cat_technology',
     organizer: 'org_2',
     date: futureDate(22, 8),
@@ -351,7 +339,6 @@ export const events = [
     _id: 'evt_8',
     title: 'Cybersecurity Conference',
     description: 'Learn from ethical hackers and security researchers. Live demos, CTF competition, and enterprise security best practices for 2026.',
-    images: [img('1550751827-4bd374c3f58b'), img('1563986768609-322da13575f3')],
     category: 'cat_technology',
     organizer: 'org_1',
     date: futureDate(55, 9),
@@ -373,7 +360,6 @@ export const events = [
     _id: 'evt_9',
     title: 'Mumbai Marathon 2026',
     description: 'Asia\'s largest marathon returns! Full marathon, half marathon, and 10K categories. Scenic route along Marine Drive and Bandra-Worli Sea Link. International timing chips and finisher medals.',
-    images: [img('1461896836934-ffe607ba8121'), img('1571008887538-b36bb1f4571a')],
     category: 'cat_sports',
     organizer: 'org_1',
     date: futureDate(60, 5),
@@ -394,7 +380,6 @@ export const events = [
     _id: 'evt_10',
     title: 'IPL Watch Party - Wankhede',
     description: 'Watch Mumbai Indians live at Wankhede Stadium with premium seating, unlimited snacks, and meet-and-greet with former players.',
-    images: [img('1531418840699-9f53a6b5d1c4'), img('1574629810360-7d2be478f8f4')],
     category: 'cat_sports',
     organizer: 'org_2',
     date: futureDate(15, 19),
@@ -414,7 +399,6 @@ export const events = [
     _id: 'evt_11',
     title: 'Premier League Football Screening',
     description: 'Giant screen viewing of Manchester United vs Liverpool with English pub atmosphere. Craft beer, fish & chips, and jersey giveaways.',
-    images: [img('1574629810360-7d2be478f8f4'), img('1431324155629-2a6ddfb8c78f')],
     category: 'cat_sports',
     organizer: 'org_2',
     date: futureDate(8, 22),
@@ -436,7 +420,6 @@ export const events = [
     _id: 'evt_12',
     title: 'Contemporary Art Exhibition',
     description: 'Featuring 40 emerging Indian artists exploring themes of identity and urbanization. Curated by Jehangir Art Gallery. Wine reception on opening night.',
-    images: [img('1460661419841-fd4b5c792e68'), img('1547891654-e66ed7ebb968')],
     category: 'cat_arts',
     organizer: 'org_1',
     date: futureDate(10, 11),
@@ -457,7 +440,6 @@ export const events = [
     _id: 'evt_13',
     title: 'Hamlet - Shakespeare in the Park',
     description: 'Award-winning theatre troupe presents Hamlet in an open-air amphitheater setting. Modern interpretation with live music score. Blankets and cushions provided.',
-    images: [img('1503099646-b28137162157'), img('1514525253161-7a46d19cd819')],
     category: 'cat_arts',
     organizer: 'org_2',
     date: futureDate(20, 19),
@@ -478,7 +460,6 @@ export const events = [
     _id: 'evt_14',
     title: 'Kala Ghoda Arts Festival',
     description: 'Mumbai\'s iconic street arts festival returns with installations, performances, workshops, and food stalls across South Mumbai heritage precinct.',
-    images: [img('1499784200255-7a572dd25c61'), img('1518998053901-5340d3961196')],
     category: 'cat_arts',
     organizer: 'org_1',
     date: futureDate(35, 10),
@@ -501,7 +482,6 @@ export const events = [
     _id: 'evt_15',
     title: 'Startup Pitch Night',
     description: 'Watch 10 innovative startups pitch to top VCs and angel investors. Network with founders, investors, and mentors. Free drinks for first 100 attendees.',
-    images: [img('1556761175-b413da4baf72'), img('1552664730-d307ca884978')],
     category: 'cat_business',
     organizer: 'org_1',
     date: futureDate(15, 18),
@@ -521,7 +501,6 @@ export const events = [
     _id: 'evt_16',
     title: 'Digital Marketing Masterclass',
     description: 'Full-day intensive on SEO, paid ads, content strategy, and analytics. Led by ex-Google marketing director. Workbook and templates included.',
-    images: [img('1552664730-d307ca884978'), img('1460925895917-afdab827c52f')],
     category: 'cat_business',
     organizer: 'org_2',
     date: futureDate(28, 10),
@@ -541,7 +520,6 @@ export const events = [
     _id: 'evt_17',
     title: 'India Real Estate Summit',
     description: 'Industry leaders discuss market trends, RERA updates, and investment opportunities. Exhibition hall with 50+ developers.',
-    images: [img('1486406146926-c627a92ad1ab'), img('1497366216548-37526070297c')],
     category: 'cat_business',
     organizer: 'org_1',
     date: futureDate(50, 9),
@@ -563,7 +541,6 @@ export const events = [
     _id: 'evt_18',
     title: 'Mumbai Street Food Festival',
     description: 'Taste 100+ street food vendors from across India. Vada pav championships, pani puri eating contest, and live cooking demos by celebrity chefs.',
-    images: [img('1414235077428-338989a2e8c0'), img('1504674900247-0877df9cc836')],
     category: 'cat_food',
     organizer: 'org_2',
     date: futureDate(14, 12),
@@ -585,7 +562,6 @@ export const events = [
     _id: 'evt_19',
     title: 'Wine Tasting & Pairing Evening',
     description: 'Sommelier-guided tasting of 12 premium wines from Nashik and international vineyards. Paired with artisan cheeses and charcuterie.',
-    images: [img('1510812590788-514f804bbf1b'), img('1558346490-70f6fae819e4')],
     category: 'cat_food',
     organizer: 'org_1',
     date: futureDate(21, 19),
@@ -605,7 +581,6 @@ export const events = [
     _id: 'evt_20',
     title: 'Craft Beer & BBQ Festival',
     description: '20 microbreweries, live BBQ stations, and acoustic sets. Sample unlimited craft beers with your entry pass.',
-    images: [img('1608270581170-7f1d3a63856f'), img('1571613319880-7f774fb94c7f')],
     category: 'cat_food',
     organizer: 'org_2',
     date: futureDate(33, 16),
@@ -627,7 +602,6 @@ export const events = [
     _id: 'evt_21',
     title: 'Photography Masterclass',
     description: 'Learn portrait, landscape, and street photography from National Geographic contributor. Camera not required — smartphone techniques included.',
-    images: [img('1452587925143-c4d4122aa7f3'), img('1516035069371-29a1b244cc32')],
     category: 'cat_education',
     organizer: 'org_1',
     date: futureDate(16, 10),
@@ -647,7 +621,6 @@ export const events = [
     _id: 'evt_22',
     title: 'Public Speaking Bootcamp',
     description: 'Transform your communication skills in this intensive 2-day bootcamp. TED-style talks, impromptu speaking, and video feedback sessions.',
-    images: [img('1524178232363-1f8729a0c5b4'), img('1523240795612-9a054b0db644')],
     category: 'cat_education',
     organizer: 'org_2',
     date: futureDate(26, 9),
@@ -668,7 +641,6 @@ export const events = [
     _id: 'evt_23',
     title: 'Kids Science Fair 2026',
     description: 'Interactive science experiments, planetarium show, and robotics demo for children aged 6-14. Parents welcome. Certificate for all participants.',
-    images: [img('1503676260728-1c00da094a0b'), img('1582719478146-6f0d251878cba')],
     category: 'cat_education',
     organizer: 'org_1',
     date: futureDate(19, 10),
@@ -690,7 +662,6 @@ export const events = [
     _id: 'evt_24',
     title: 'Yoga & Wellness Retreat',
     description: 'A transformative 2-day wellness retreat featuring sunrise yoga, meditation workshops, Ayurvedic cooking classes, and spa treatments in the Sahyadri hills.',
-    images: [img('1544367567-0f2fcb009e0b'), img('1506126613408-eca07ce68773')],
     category: 'cat_wellness',
     organizer: 'org_1',
     date: futureDate(20, 7),
@@ -712,7 +683,6 @@ export const events = [
     _id: 'evt_25',
     title: 'Sunrise Beach Yoga - Juhu',
     description: 'Start your Sunday with guided yoga on Juhu Beach. All levels welcome. Mat provided. Healthy breakfast included post-session.',
-    images: [img('1540206396685-0d2a4deb4d39'), img('1599901860904-17e06ed7083a')],
     category: 'cat_wellness',
     organizer: 'org_2',
     date: futureDate(7, 6),
@@ -732,7 +702,6 @@ export const events = [
     _id: 'evt_26',
     title: 'Mental Health Awareness Summit',
     description: 'Panel discussions with psychologists, mindfulness workshops, and resource fair. Breaking stigma around mental health in Indian workplaces.',
-    images: [img('1573497019940-8c28d488dde3'), img('1571019613454-1cb2f99b2d8b')],
     category: 'cat_wellness',
     organizer: 'org_1',
     date: futureDate(38, 10),
@@ -754,7 +723,6 @@ export const events = [
     _id: 'evt_pending',
     title: 'Blockchain & Web3 Expo',
     description: 'Pending approval — NFT gallery, DeFi workshops, and metaverse demos.',
-    images: [img('1639762681485-074b7f938ba0')],
     category: 'cat_technology',
     organizer: 'org_2',
     date: futureDate(70, 10),
@@ -771,6 +739,21 @@ export const events = [
     views: 0,
   },
 ];
+
+categories.forEach((c) => {
+  c.image = categoryImage(c.slug);
+});
+
+organizers.forEach((o, i) => {
+  o.logo = organizerLogo(i);
+});
+
+const categorySeeds = {};
+events.forEach((e) => {
+  const seed = categorySeeds[e.category] || 0;
+  e.images = eventImages(e.category, seed, 2);
+  categorySeeds[e.category] = seed + 1;
+});
 
 // Attach generated seats to each event
 events.forEach((e) => {

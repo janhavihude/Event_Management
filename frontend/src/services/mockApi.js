@@ -253,9 +253,6 @@ const mockHandler = async (method, url, data, baseURL = '/api') => {
       saveStore(store);
       return ok({ booking, paymentRequired: true, amount: total, provider: data.paymentProvider });
     }
-    if (parts[1] && parts[2] === 'ticket') {
-      return { data: new Blob(['PDF Ticket Demo'], { type: 'application/pdf' }) };
-    }
     if (parts[1] && parts[2] === 'cancel') {
       const booking = store.bookings.find((b) => b._id === parts[1]);
       booking.status = 'cancelled';

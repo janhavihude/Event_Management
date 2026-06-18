@@ -37,7 +37,7 @@ const Navbar = ({ variant = 'default' }) => {
   const navLinks = [
     { to: '/', label: t('nav.home') },
     { to: '/events', label: t('nav.events') },
-    { to: '/calendar', label: 'Calendar' },
+    { to: '/calendar', label: t('nav.calendar') },
     { to: '/#contact', label: t('nav.contact') },
   ];
 
@@ -51,7 +51,7 @@ const Navbar = ({ variant = 'default' }) => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         transparent
           ? 'bg-transparent border-transparent'
-          : 'bg-white/85 dark:bg-neutral-900/85 backdrop-blur-xl border-b border-neutral-200/60 dark:border-neutral-800/50 shadow-sm shadow-primary-200/20'
+          : 'bg-neutral-50/90 dark:bg-neutral-900/90 backdrop-blur-xl border-b border-neutral-200/60 dark:border-neutral-800/50 shadow-sm shadow-primary-200/20'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,12 +59,12 @@ const Navbar = ({ variant = 'default' }) => {
           <Link to="/" className="flex items-center gap-2.5 group">
             <motion.div
               whileHover={{ rotate: 10, scale: 1.1 }}
-              className="w-10 h-10 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center shadow-md shadow-primary-300/30"
+              className="w-10 h-10 bg-brand-gradient rounded-xl flex items-center justify-center shadow-md shadow-primary-300/30"
             >
               <Ticket className="w-5 h-5 text-white" />
             </motion.div>
             <span className={`font-display font-bold text-xl ${transparent ? 'text-white' : 'text-neutral-900 dark:text-white'}`}>
-              Event<span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-300">Organizer</span>
+              Event<span className="text-transparent bg-clip-text bg-brand-gradient">Organizer</span>
             </span>
           </Link>
 

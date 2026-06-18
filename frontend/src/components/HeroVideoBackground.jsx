@@ -1,5 +1,6 @@
 import { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { HERO_POSTER } from '../data/eventImages';
 
 // Cinematic event/concert stock videos (Pexels — free license)
 const VIDEO_SOURCES = [
@@ -7,8 +8,7 @@ const VIDEO_SOURCES = [
   'https://videos.pexels.com/video-files/3045163/3045163-hd_1920_1080_25fps.mp4',
 ];
 
-const POSTER =
-  'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1920&q=80';
+const POSTER = HERO_POSTER;
 
 const HeroVideoBackground = ({ children, className = '' }) => {
   const videoRef = useRef(null);
@@ -45,17 +45,17 @@ const HeroVideoBackground = ({ children, className = '' }) => {
         <motion.div
           animate={{ scale: [1, 1.2, 1], opacity: [0.25, 0.45, 0.25] }}
           transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-1/4 -left-32 w-96 h-96 bg-primary-400/25 rounded-full blur-[100px]"
+          className="absolute top-1/4 -left-32 w-96 h-96 bg-primary-400/20 rounded-full blur-[100px]"
         />
         <motion.div
           animate={{ scale: [1.2, 1, 1.2], opacity: [0.15, 0.3, 0.15] }}
           transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute bottom-1/4 -right-32 w-[500px] h-[500px] bg-neutral-400/20 rounded-full blur-[120px]"
+          className="absolute bottom-1/4 -right-32 w-[500px] h-[500px] bg-accent-400/15 rounded-full blur-[120px]"
         />
         <motion.div
           animate={{ scale: [1, 1.15, 1], opacity: [0.12, 0.28, 0.12] }}
           transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-300/15 rounded-full blur-[130px]"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-300/10 rounded-full blur-[130px]"
         />
 
         {/* Floating particles */}

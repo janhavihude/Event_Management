@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 import { useAuth } from '../context/AuthContext';
 import api from '../services/api';
 import toast from 'react-hot-toast';
+import EventImage from '../components/EventImage';
 
 const EventDetailPage = () => {
   const { id } = useParams();
@@ -56,7 +57,7 @@ const EventDetailPage = () => {
     );
   }
 
-  const image = event.images?.[0] || 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800';
+  const image = event.images?.[0];
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
@@ -64,7 +65,7 @@ const EventDetailPage = () => {
 
       {/* Hero Image */}
       <div className="relative h-64 sm:h-80 lg:h-96">
-        <img src={image} alt={event.title} className="w-full h-full object-cover" />
+        <EventImage src={image} alt={event.title} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
           <div className="max-w-7xl mx-auto">

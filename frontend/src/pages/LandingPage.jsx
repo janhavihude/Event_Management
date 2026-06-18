@@ -8,7 +8,9 @@ import Footer from '../components/Footer';
 import EventCard from '../components/EventCard';
 import HeroVideoBackground from '../components/HeroVideoBackground';
 import AnimatedCounter from '../components/AnimatedCounter';
+import EventImage from '../components/EventImage';
 import api from '../services/api';
+import { HERO_BG_CONCERT, HERO_BG_CROWD, HERO_BG_VENUE } from '../data/eventImages';
 import toast from 'react-hot-toast';
 
 const fadeUp = {
@@ -79,7 +81,7 @@ const LandingPage = () => {
                   className="font-display text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-6 text-glow"
                 >
                   Discover Amazing{' '}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-200 via-primary-100 to-neutral-200">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-300 via-primary-200 to-accent-300">
                     Events
                   </span>{' '}
                   Near You
@@ -102,7 +104,7 @@ const LandingPage = () => {
                 <motion.div custom={4} variants={fadeUp} initial="hidden" animate="visible" className="flex items-center gap-6 mt-12 justify-center lg:justify-start">
                   <div className="flex -space-x-3">
                     {['P', 'R', 'A', 'V'].map((l, i) => (
-                      <div key={i} className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-400 to-primary-300 border-2 border-white/40 flex items-center justify-center text-white text-xs font-bold">
+                      <div key={i} className="w-10 h-10 rounded-full bg-brand-gradient border-2 border-white/40 flex items-center justify-center text-white text-xs font-bold">
                         {l}
                       </div>
                     ))}
@@ -132,7 +134,7 @@ const LandingPage = () => {
                       i === 0 ? 'top-0 right-0 z-30' : i === 1 ? 'top-32 left-0 z-20' : 'bottom-0 right-12 z-10'
                     }`}
                   >
-                    <img src={event.images?.[0]} alt="" className="w-full h-32 object-cover rounded-xl mb-3" />
+                    <EventImage src={event.images?.[0]} alt={event.title} className="w-full h-32 object-cover rounded-xl mb-3" />
                     <p className="text-white font-semibold text-sm line-clamp-1">{event.title}</p>
                     <p className="text-white/60 text-xs mt-1">{event.venue?.city}</p>
                   </motion.div>
@@ -158,9 +160,9 @@ const LandingPage = () => {
       </HeroVideoBackground>
 
       {/* Statistics */}
-      <section className="relative py-16 bg-gradient-to-r from-primary-400 via-primary-500 to-primary-600 overflow-hidden">
+      <section className="relative py-16 bg-brand-gradient overflow-hidden">
         <div className="absolute inset-0 bg-hero-pattern opacity-30" />
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1920&q=30')] bg-cover bg-center opacity-10 mix-blend-overlay" />
+        <div className="absolute inset-0 bg-cover bg-center opacity-10 mix-blend-overlay" style={{ backgroundImage: `url('${HERO_BG_CONCERT}')` }} />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -223,7 +225,7 @@ const LandingPage = () => {
                   className="block card-hover !p-0 overflow-hidden group"
                 >
                   <div className="relative h-36 sm:h-40 overflow-hidden">
-                    <img
+                    <EventImage
                       src={cat.image}
                       alt={cat.name}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -246,7 +248,7 @@ const LandingPage = () => {
 
       {/* Upcoming Events */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=1920&q=20')] bg-cover bg-fixed bg-center opacity-5 dark:opacity-[0.03]" />
+        <div className="absolute inset-0 bg-cover bg-fixed bg-center opacity-5 dark:opacity-[0.03]" style={{ backgroundImage: `url('${HERO_BG_CROWD}')` }} />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -316,7 +318,7 @@ const LandingPage = () => {
 
       {/* Contact */}
       <section id="contact" className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1511578314322-379afb476865?w=1920&q=30')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${HERO_BG_VENUE}')` }} />
         <div className="absolute inset-0 bg-neutral-900/80 backdrop-blur-sm" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid lg:grid-cols-2 gap-16 items-center">

@@ -13,6 +13,7 @@ import {
 } from './mockData.js';
 
 const STORAGE_KEY = 'eventorganizer_store';
+const STORE_VERSION = 2;
 
 const defaultStore = () => ({
   events: JSON.parse(JSON.stringify(seedEvents)),
@@ -22,6 +23,7 @@ const defaultStore = () => ({
   reports: JSON.parse(JSON.stringify(reports)),
   chatMessages: {},
   registeredUsers: [],
+  version: STORE_VERSION,
 });
 
 export const getStore = () => {
@@ -33,10 +35,21 @@ export const getStore = () => {
       return store;
     }
     const store = JSON.parse(raw);
-    // Merge any new seed events not in store
-    seedEvents.forEach((se) => {
-      if (!store.events.find((e) => e._id === se._id)) store.events.push(JSON.parse(JSON.stringify(se)));
-    });
+    // Refresh image URLs when seed data is updated
+    if (store.version !== STORE_VERSION) {
+      seedEvents.forEach((se) => {
+        const existing = store.events.find((e) => e._id === se._id);
+        if (existing) existing.images = se.images;
+        else store.events.push(JSON.parse(JSON.stringify(se)));
+      });
+      store.version = STORE_VERSION;
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(store));
+    } else {
+      // Merge any new seed events not in store
+      seedEvents.forEach((se) => {
+        if (!store.events.find((e) => e._id === se._id)) store.events.push(JSON.parse(JSON.stringify(se)));
+      });
+    }
     return store;
   } catch {
     const store = defaultStore();

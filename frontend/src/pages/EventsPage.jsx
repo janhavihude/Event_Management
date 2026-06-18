@@ -6,6 +6,8 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import EventCard from '../components/EventCard';
 import api from '../services/api';
+import { HERO_BG_CONCERT } from '../data/eventImages';
+import EventImage from '../components/EventImage';
 
 const EventsPage = () => {
   const { t } = useTranslation();
@@ -46,7 +48,7 @@ const EventsPage = () => {
     <div className="min-h-screen bg-neutral-50 dark:bg-neutral-900">
       <Navbar />
       <div className="relative pt-16 pb-12 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1920&q=40')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${HERO_BG_CONCERT}')` }} />
         <div className="absolute inset-0 bg-gradient-to-r from-primary-800/80 via-neutral-900/75 to-neutral-800/80" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <h1 className="font-display text-4xl font-extrabold text-white mb-2">Discover Events</h1>
@@ -92,7 +94,7 @@ const EventsPage = () => {
               onClick={() => setFilters({ ...filters, category: cat._id })}
               className={`flex-shrink-0 flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${filters.category === cat._id ? 'bg-primary-500 text-white' : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700'}`}
             >
-              <img src={cat.image} alt="" className="w-6 h-6 rounded-full object-cover" />
+              <EventImage src={cat.image} alt={cat.name} className="w-6 h-6 rounded-full object-cover" />
               {cat.name}
             </button>
           ))}

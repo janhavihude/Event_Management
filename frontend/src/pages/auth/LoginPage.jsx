@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Mail, Lock, Eye, EyeOff } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import toast from 'react-hot-toast';
+import { HERO_BG_CONCERT } from '../../data/eventImages';
 
 const LoginPage = () => {
   const { t } = useTranslation();
@@ -35,7 +36,7 @@ const LoginPage = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1920&q=30')] bg-cover bg-center" />
+      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${HERO_BG_CONCERT}')` }} />
       <div className="absolute inset-0 bg-gradient-to-br from-primary-900/85 via-neutral-900/90 to-neutral-900/95" />
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-md relative z-10">
         <div className="text-center mb-8">

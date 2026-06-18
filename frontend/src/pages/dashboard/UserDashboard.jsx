@@ -7,6 +7,7 @@ import EventCard from '../../components/EventCard';
 import { useAuth } from '../../context/AuthContext';
 import useSocket from '../../hooks/useSocket';
 import api from '../../services/api';
+import EventImage from '../../components/EventImage';
 
 const UserDashboard = () => {
   const { user } = useAuth();
@@ -62,7 +63,7 @@ const UserDashboard = () => {
             {bookings.map((booking) => (
               <div key={booking._id} className="card flex items-center justify-between !py-4">
                 <div className="flex items-center gap-4">
-                  <img src={booking.event?.images?.[0] || 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=100'} alt="" className="w-14 h-14 rounded-lg object-cover" />
+                  <EventImage src={booking.event?.images?.[0]} alt={booking.event?.title || 'Event'} className="w-14 h-14 rounded-lg object-cover" />
                   <div>
                     <p className="font-medium text-gray-900 dark:text-white">{booking.event?.title}</p>
                     <p className="text-sm text-gray-500">{booking.bookingReference} • {booking.ticketCount} ticket(s)</p>

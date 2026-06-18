@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Mail, Lock, User, Eye, EyeOff } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import toast from 'react-hot-toast';
+import { HERO_BG_CROWD } from '../../data/eventImages';
 
 const RegisterPage = () => {
   const { t } = useTranslation();
@@ -30,7 +31,7 @@ const RegisterPage = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-8 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=1920&q=30')] bg-cover bg-center" />
+      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${HERO_BG_CROWD}')` }} />
       <div className="absolute inset-0 bg-gradient-to-br from-primary-800/80 via-neutral-900/92 to-neutral-900/95" />
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-md relative z-10">
         <div className="text-center mb-8">

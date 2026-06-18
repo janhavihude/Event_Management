@@ -5,57 +5,60 @@ export default {
   theme: {
     extend: {
       colors: {
-        /* Pastel purple — main brand */
+        /* The Authentic Brief — cream #fdf5df */
+        cream: '#fdf5df',
+        /* Teal #5ebec4 — primary brand */
         primary: {
-          50: '#faf7fd',
-          100: '#f3ecfa',
-          200: '#e8dcf5',
-          300: '#d9c4ed',
-          400: '#c4a3e0',
-          500: '#a87fd0',
-          600: '#9266bd',
-          700: '#7a529f',
-          800: '#634382',
-          900: '#503668',
+          50: '#f0fafb',
+          100: '#d9f2f4',
+          200: '#b5e5ea',
+          300: '#8ad5dc',
+          400: '#6ec9d0',
+          500: '#5ebec4',
+          600: '#4aa5ab',
+          700: '#3d868b',
+          800: '#356d71',
+          900: '#2f5a5e',
+          950: '#1c383b',
         },
-        /* Warm neutral accents */
-        neutral: {
-          50: '#fafaf9',
-          100: '#f5f5f4',
-          200: '#e7e5e4',
-          300: '#d6d3d1',
-          400: '#a8a29e',
-          500: '#78716c',
-          600: '#57534e',
-          700: '#44403c',
-          800: '#292524',
-          900: '#1c1917',
-        },
-        /* Alias secondary → neutral for existing class names */
-        secondary: {
-          50: '#fafaf9',
-          100: '#f5f5f4',
-          200: '#e7e5e4',
-          300: '#d6d3d1',
-          400: '#a8a29e',
-          500: '#78716c',
-          600: '#57534e',
-          700: '#44403c',
-          800: '#292524',
-          900: '#1c1917',
-        },
-        /* Soft lilac accent — subtle highlight */
+        /* Pink #f92c85 — accent / CTAs */
         accent: {
-          50: '#f8f6fc',
-          100: '#f0ebf8',
-          200: '#e2d9f0',
-          300: '#cfc0e4',
-          400: '#b5a0d4',
-          500: '#9d84c2',
-          600: '#846ba8',
-          700: '#6b5589',
-          800: '#56446f',
-          900: '#45385a',
+          50: '#fef1f7',
+          100: '#fde4f0',
+          200: '#fcc9e2',
+          300: '#fa9cc9',
+          400: '#f75fa8',
+          500: '#f92c85',
+          600: '#e8186d',
+          700: '#ca0f58',
+          800: '#a71049',
+          900: '#8b1240',
+          950: '#550422',
+        },
+        /* Warm cream neutrals */
+        neutral: {
+          50: '#fdf5df',
+          100: '#f9ecd0',
+          200: '#f3e2bc',
+          300: '#e8d4a4',
+          400: '#c9b48e',
+          500: '#a89472',
+          600: '#8a7760',
+          700: '#6d5e4d',
+          800: '#4f4539',
+          900: '#352e26',
+        },
+        secondary: {
+          50: '#fdf5df',
+          100: '#f9ecd0',
+          200: '#f3e2bc',
+          300: '#e8d4a4',
+          400: '#c9b48e',
+          500: '#a89472',
+          600: '#8a7760',
+          700: '#6d5e4d',
+          800: '#4f4539',
+          900: '#352e26',
         },
       },
       fontFamily: {
@@ -64,9 +67,10 @@ export default {
       },
       backgroundImage: {
         'mesh-gradient':
-          'radial-gradient(at 30% 20%, rgba(168,127,208,0.18) 0px, transparent 50%), radial-gradient(at 80% 10%, rgba(214,211,209,0.25) 0px, transparent 50%), radial-gradient(at 10% 80%, rgba(216,196,237,0.15) 0px, transparent 50%)',
+          'radial-gradient(at 30% 20%, rgba(94,190,196,0.18) 0px, transparent 50%), radial-gradient(at 80% 10%, rgba(249,44,133,0.12) 0px, transparent 50%), radial-gradient(at 10% 80%, rgba(253,245,223,0.6) 0px, transparent 50%)',
         'hero-pattern':
-          "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23a87fd0' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+          "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%235ebec4' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+        'brand-gradient': 'linear-gradient(135deg, #5ebec4 0%, #f92c85 100%)',
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out',

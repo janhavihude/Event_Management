@@ -2,9 +2,10 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, IndianRupee, ArrowRight } from 'lucide-react';
 import { format } from 'date-fns';
+import EventImage from './EventImage';
 
 const EventCard = ({ event, index = 0 }) => {
-  const image = event.images?.[0] || 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=400';
+  const image = event.images?.[0];
 
   return (
     <motion.div
@@ -17,7 +18,7 @@ const EventCard = ({ event, index = 0 }) => {
     >
       <Link to={`/events/${event._id}`}>
         <div className="relative h-52 overflow-hidden">
-          <img
+          <EventImage
             src={image}
             alt={event.title}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"

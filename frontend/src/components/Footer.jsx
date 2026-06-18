@@ -5,18 +5,18 @@ import { Ticket, Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, He
 const Footer = () => {
   return (
     <footer className="relative bg-neutral-900 text-neutral-300 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-950/40 via-neutral-900 to-neutral-950" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-400/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-950/50 via-neutral-900 to-accent-950/30" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-400/50 to-accent-400/50" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <div className="flex items-center gap-2.5 mb-5">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center shadow-md shadow-primary-500/20">
+              <div className="w-10 h-10 bg-brand-gradient rounded-xl flex items-center justify-center shadow-md shadow-primary-500/20">
                 <Ticket className="w-5 h-5 text-white" />
               </div>
               <span className="font-display font-bold text-xl text-white">
-                Event<span className="text-primary-300">Organizer</span>
+                Event<span className="text-transparent bg-clip-text bg-brand-gradient">Organizer</span>
               </span>
             </div>
             <p className="text-sm text-neutral-400 mb-6 leading-relaxed">

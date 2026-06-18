@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import DashboardLayout from '../../components/DashboardLayout';
 import api from '../../services/api';
 import toast from 'react-hot-toast';
+import EventImage from '../../components/EventImage';
 
 const ManageEvents = () => {
   const [pendingEvents, setPendingEvents] = useState([]);
@@ -46,7 +47,7 @@ const ManageEvents = () => {
         {events.map((event) => (
           <div key={event._id} className="card">
             <div className="flex flex-col sm:flex-row gap-4">
-              <img src={event.images?.[0] || 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=100'} alt="" className="w-full sm:w-24 h-20 rounded-lg object-cover" />
+              <EventImage src={event.images?.[0]} alt={event.title} className="w-full sm:w-24 h-20 rounded-lg object-cover" />
               <div className="flex-1">
                 <h3 className="font-semibold text-gray-900 dark:text-white">{event.title}</h3>
                 <p className="text-sm text-gray-500">{event.organizer?.organizationName} • {new Date(event.date).toLocaleDateString()}</p>

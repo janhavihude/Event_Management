@@ -110,7 +110,7 @@ const BookingPage = () => {
     return <div className="min-h-screen flex items-center justify-center"><div className="animate-spin rounded-full h-12 w-12 border-4 border-primary-500 border-t-transparent" /></div>;
   }
 
-  const seatColors = { regular: 'bg-secondary-100 border-secondary-300 text-secondary-700', vip: 'bg-amber-100 border-amber-300 text-amber-700', premium: 'bg-purple-100 border-purple-300 text-purple-700' };
+  const seatColors = { regular: 'bg-neutral-100 border-neutral-300 text-neutral-700', vip: 'bg-amber-50 border-amber-200 text-amber-800', premium: 'bg-primary-50 border-primary-200 text-primary-800' };
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
