@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # EventOrganizer - Full Stack Event Management Platform
 
 A modern, production-ready event organizer website built with React.js, Node.js, Express.js, MongoDB, Tailwind CSS, and JWT Authentication.
@@ -180,3 +181,6 @@ Users, Events, Bookings, Payments, Reviews, Notifications, Categories, Organizer
 ## License
 
 MIT
+=======
+# Event_Management
+>>>>>>> 189ebca585d3b1d0aa0ea12ce2d9e181642c6df0
